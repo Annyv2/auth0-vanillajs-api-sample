@@ -15,12 +15,11 @@ $(document).ready(function() {
 
 	if (hash) {
 		if (hash.error) {
-			console.log("There was an error logging in", hash.error);
-			alert('There was an error: ' + hash.error + '\n' + hash.error_description);
+        	console.error("Something went wrong: ", err);
+    		alert("Something went wrong, check the Console errors");
 		} else {
-		//save the token in the session:
-		localStorage.setItem('id_token', hash.id_token);
-
+			//save the token in the session:
+			localStorage.setItem('id_token', hash.id_token);
 		}
 			
 	 //retrieve the profile:
